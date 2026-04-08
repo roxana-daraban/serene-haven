@@ -221,6 +221,7 @@
 }
 
 .landing-cta-gold {
+  display: inline-block;
   background: linear-gradient(135deg, #6a5f00, #938a3e);
   color: white;
   padding: 1.35rem 4rem;
@@ -232,13 +233,19 @@
   border: none;
   box-shadow: 0 14px 40px rgba(106, 95, 0, 0.28);
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.landing-cta-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px rgba(106, 95, 0, 0.35);
 }
 
 .landing-footer-simple {
   padding: 3.5rem 0;
   text-align: center;
-}
-
-html {
-  scroll-behavior: smooth;
 }

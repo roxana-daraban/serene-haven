@@ -56,6 +56,9 @@
 }
 
 .services-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgba(106, 95, 0, 0.2);
   border-radius: 9999px;
   background: linear-gradient(135deg, #6a5f00, #90822f);
@@ -66,6 +69,7 @@
   font-weight: 700;
   padding: 0.78rem 1.7rem;
   cursor: pointer;
+  text-decoration: none;
   transition: transform 220ms ease;
 }
 

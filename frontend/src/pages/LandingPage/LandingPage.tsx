@@ -181,9 +181,9 @@ export const LandingPage = () => {
               </div>
             </div>
 
-            <button type="button" className="landing-cta-gold">
+            <Link to="/contact" className="landing-cta-gold">
               Rezervă o Ședință
-            </button>
+            </Link>
           </motion.div>
         </div>
       </section>

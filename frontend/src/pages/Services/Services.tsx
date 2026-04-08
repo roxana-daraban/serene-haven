@@ -1,5 +1,6 @@
 import { motion, type HTMLMotionProps } from 'framer-motion'
 import { Check, Droplets, Flower2, Hand, Leaf, Wind } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import './Services.css'
 
 const fadeInProps: HTMLMotionProps<'div'> = {
@@ -50,7 +51,9 @@ export function ServicesPage() {
                   </p>
                   <div className="service-footer">
                     <strong>de la 220 RON</strong>
-                    <button type="button">Rezervă</button>
+                    <Link to="/contact" className="service-book-link">
+                      Rezervă
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -74,7 +77,9 @@ export function ServicesPage() {
                   </p>
                   <div className="service-footer">
                     <strong>de la 250 RON</strong>
-                    <button type="button">Rezervă</button>
+                    <Link to="/contact" className="service-book-link">
+                      Rezervă
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -98,7 +103,9 @@ export function ServicesPage() {
                   </p>
                   <div className="service-footer">
                     <strong>de la 240 RON</strong>
-                    <button type="button">Rezervă</button>
+                    <Link to="/contact" className="service-book-link">
+                      Rezervă
+                    </Link>
                   </div>
                 </div>
               </motion.article>
@@ -122,7 +129,9 @@ export function ServicesPage() {
                   </p>
                   <div className="service-footer">
                     <strong>200 RON</strong>
-                    <button type="button">Rezervă</button>
+                    <Link to="/contact" className="service-book-link">
+                      Rezervă
+                    </Link>
                   </div>
                 </div>
               </motion.article>

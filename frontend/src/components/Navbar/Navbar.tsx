@@ -14,17 +14,18 @@ export function Navbar() {
         </Link>
         <nav className="services-menu" aria-label="Primary">
           <NavLink to="/" end className={({ isActive }) => navLinkClassName(isActive)}>
-            Home
+            Acasă
           </NavLink>
           <NavLink to="/services" className={({ isActive }) => navLinkClassName(isActive)}>
-            Services
+            Servicii
           </NavLink>
-          <Link to="/#about">About Us</Link>
-          <Link to="/#contact">Contact</Link>
+          <NavLink to="/contact" className={({ isActive }) => navLinkClassName(isActive)}>
+            Contact
+          </NavLink>
         </nav>
-        <button className="services-book-btn" type="button">
-          Book Now
-        </button>
+        <Link to="/contact" className="services-book-btn">
+          Rezervă
+        </Link>
       </div>
     </header>
   )

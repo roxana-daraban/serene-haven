@@ -178,21 +178,6 @@ export function ServicesPage() {
           </div>
         </section>
       </main>
-
-      <footer className="services-footer">
-        <div className={`${containerClass} footer-grid`}>
-          <div>
-            <div className="footer-logo">Serene Haven</div>
-            <p>© 2024 Serene Haven Sanctuary. All rights reserved.</p>
-          </div>
-          <div className="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Sustainability</a>
-            <a href="#">Careers</a>
-          </div>
-        </div>
-      </footer>
     </div>
   )
 }

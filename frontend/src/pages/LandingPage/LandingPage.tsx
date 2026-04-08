@@ -187,13 +187,6 @@ export const LandingPage = () => {
           </motion.div>
         </div>
       </section>
-
-      <footer className="landing-footer-simple border-0">
-        <span className="font-serif italic text-2xl text-[#6a5f00]">Serene Haven</span>
-        <p className="text-[10px] text-[#4b4738]/40 tracking-[0.3em] uppercase mt-6">
-          © {new Date().getFullYear()} Crafted for Rejuvenation.
-        </p>
-      </footer>
     </div>
   )
 }

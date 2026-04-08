@@ -1,7 +1,6 @@
 import { type FormEvent, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import './Contact.css'
 
 const easeSoft: [number, number, number, number] = [0.22, 1, 0.36, 1]
@@ -209,23 +208,6 @@ export function ContactPage() {
           </motion.section>
         </div>
       </section>
-
-      <footer className="contact-footer">
-        <div className="contact-footer-inner">
-          <div>
-            <div className="font-headline text-xl italic text-[#6a5f00]">Serene Haven</div>
-            <p className="mt-2 text-sm text-[#4b4738]/80">
-              © {new Date().getFullYear()} Serene Haven Sanctuary. All rights reserved.
-            </p>
-          </div>
-          <nav className="contact-footer-links" aria-label="Footer">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Sustainability</a>
-            <Link to="/services">Servicii</Link>
-          </nav>
-        </div>
-      </footer>
     </div>
   )
 }

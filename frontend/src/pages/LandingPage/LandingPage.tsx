@@ -51,7 +51,7 @@ export const LandingPage = () => {
               Masaje terapeutice și de relaxare premium, concepute pentru starea ta de bine. O
               experiență multisenzorială într-un cadru definit de liniște.
             </p>
-            <div className="mt-12">
+            <div className="landing-hero-cta-wrap">
               <Link to="/services" className="landing-cta-main">
                 Explorează Serviciile
               </Link>

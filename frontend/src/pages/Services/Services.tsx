@@ -35,7 +35,7 @@ export function ServicesPage() {
               <motion.article {...fadeInProps} className="service-card">
                 <div className="service-media">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1nfB6Q-iJjIAgLf_GdLY006ObxSf85-L8bWmiWuPof-lA4CX3xn8RGZhpdFzCr65FaXCT6Z-1KkkMObxR7ksp2qX4Edbxra58USTq9WZdkvrC4Sq5JHfHMXZK1pLEcg4nvvvhDn2yWHMmeFMGpSkYXJqT8cPIIkE7UBBQ8OcLylos-9p83Sa0oB1ujVSKAuUnsEyfEumEw2fLoU49MK4b3Qg2YTAziYXEg9tlRV5TBqJoKuQZ6R_TBeM3JuJmpAnHM2GUG1k2HSA"
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=85"
                     alt="Masaj Suedez"
                   />
                   <span>60/90 MIN</span>
@@ -61,7 +61,7 @@ export function ServicesPage() {
               <motion.article {...fadeInProps} className="service-card">
                 <div className="service-media">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq1kPXm23j3whqMJlemewwFv3aDKyqvUWLDmSQPNyLSbMS6WozYz_Z60aEON2zY8r8oA78cMmnbmmxe_9veicVanHER9j0MUZmCmdbSR5Nth4JxT_LQcfFkrp3fPa-ucEqQxyqFtbmfAqw2nBxS8tETnJhSmPxfHhZ-tjP5ol4ABzTL76aj2IObCtMkj0wlHq0zdSuRTHUuqpaIIS72jUvKPrH46m5roq9mUXtxH-AfIg1PHLIjdd2HPrKjPNRM6ImL3VRIZlHB00"
+                    src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=85"
                     alt="Masaj Deep Tissue"
                   />
                   <span>60/90 MIN</span>
@@ -113,7 +113,7 @@ export function ServicesPage() {
               <motion.article {...fadeInProps} className="service-card">
                 <div className="service-media">
                   <img
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMJfRVXYmHwcijEu-BkmynSyGroseA-hSe60F_R1PGg4SlmK5B8cqiADdzKxSuKSQy1lZoE1FokIdEYA3krPO-Zg9BtGRAcALRYvP2p93AWOtElYTH2GeFPWya0zfxnTQK-S4rC3tu1DHulBCI4moEFGOieKAaOQJ5uFqgeg4DXSxT6Q-zgC8zAt3gnPpJ-xjNV-CI6YKzf4ekHiRmtxfJm1ZwRAYrun4e748-k4dRlDC73DomOtDvoZLhmVOKf8VuOmMvuNDyUGg"
+                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=1200&q=85"
                     alt="Reflexoterapie"
                   />
                   <span>60 MIN</span>

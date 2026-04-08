@@ -91,9 +91,15 @@
 .landing-hero-text {
   max-width: 600px;
   margin: 0 auto;
+  padding-bottom: 1.5rem;
   font-size: 1.05rem;
   line-height: 1.85;
   color: rgba(26, 28, 25, 0.78);
+}
+
+/* Spațiu mare între paragraf și buton — forțat în CSS (Tailwind putea fi insuficient) */
+.landing-hero-cta-wrap {
+  margin-top: clamp(2.25rem, 5vw, 4.5rem);
 }
 
 .landing-cta-main {

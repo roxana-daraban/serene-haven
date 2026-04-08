@@ -1,0 +1,189 @@
+import { motion, type HTMLMotionProps } from 'framer-motion'
+import { Check, Droplets, Flower2, Hand, Leaf, Wind } from 'lucide-react'
+import './Services.css'
+
+const fadeInProps: HTMLMotionProps<'div'> = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
+  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+}
+
+const containerClass = 'max-w-[1200px] mx-auto px-6'
+
+export function ServicesPage() {
+  return (
+    <div className="services-page bg-[#fafaf5] text-[#1a1c19]">
+      <main>
+        <section className="services-hero py-32">
+          <div className={containerClass}>
+            <motion.div {...fadeInProps} className="services-hero-content">
+              <span className="services-eyebrow">Experiență Ritualică</span>
+              <h1 className="services-hero-title">Ritualuri de Rejuvenare</h1>
+              <p className="services-hero-text">
+                Descoperă o lume a liniștii unde timpul se oprește. Selecția noastră de terapii
+                este concepută pentru a armoniza mintea, corpul și spiritul.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="py-32" id="services">
+          <div className={containerClass}>
+            <div className="services-grid">
+              <motion.article {...fadeInProps} className="service-card">
+                <div className="service-media">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1nfB6Q-iJjIAgLf_GdLY006ObxSf85-L8bWmiWuPof-lA4CX3xn8RGZhpdFzCr65FaXCT6Z-1KkkMObxR7ksp2qX4Edbxra58USTq9WZdkvrC4Sq5JHfHMXZK1pLEcg4nvvvhDn2yWHMmeFMGpSkYXJqT8cPIIkE7UBBQ8OcLylos-9p83Sa0oB1ujVSKAuUnsEyfEumEw2fLoU49MK4b3Qg2YTAziYXEg9tlRV5TBqJoKuQZ6R_TBeM3JuJmpAnHM2GUG1k2HSA"
+                    alt="Masaj Suedez"
+                  />
+                  <span>60/90 MIN</span>
+                </div>
+                <div className="service-body">
+                  <div className="service-icon">
+                    <Flower2 size={18} />
+                  </div>
+                  <h3>Masaj Suedez</h3>
+                  <p>
+                    O evadare clasică pentru relaxare profundă, folosind mișcări fluide pentru
+                    eliberarea tensiunii musculare.
+                  </p>
+                  <div className="service-footer">
+                    <strong>de la 220 RON</strong>
+                    <button type="button">Rezervă</button>
+                  </div>
+                </div>
+              </motion.article>
+
+              <motion.article {...fadeInProps} className="service-card">
+                <div className="service-media">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq1kPXm23j3whqMJlemewwFv3aDKyqvUWLDmSQPNyLSbMS6WozYz_Z60aEON2zY8r8oA78cMmnbmmxe_9veicVanHER9j0MUZmCmdbSR5Nth4JxT_LQcfFkrp3fPa-ucEqQxyqFtbmfAqw2nBxS8tETnJhSmPxfHhZ-tjP5ol4ABzTL76aj2IObCtMkj0wlHq0zdSuRTHUuqpaIIS72jUvKPrH46m5roq9mUXtxH-AfIg1PHLIjdd2HPrKjPNRM6ImL3VRIZlHB00"
+                    alt="Masaj Deep Tissue"
+                  />
+                  <span>60/90 MIN</span>
+                </div>
+                <div className="service-body">
+                  <div className="service-icon">
+                    <Hand size={18} />
+                  </div>
+                  <h3>Masaj Deep Tissue</h3>
+                  <p>
+                    Terapie concentrată pe straturile profunde ale țesutului muscular, potrivită
+                    pentru eliberarea nodurilor cronice.
+                  </p>
+                  <div className="service-footer">
+                    <strong>de la 250 RON</strong>
+                    <button type="button">Rezervă</button>
+                  </div>
+                </div>
+              </motion.article>
+
+              <motion.article {...fadeInProps} className="service-card">
+                <div className="service-media">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCupd_I0ZhHZ81z08p1fKGG7SoFmoiEayJyiyD5C8HOl7c2x1Wdr3DtF_XySXMnWGxZdHlkSIHHyyG7EocaJpE803s5Cdhj7cKAeg098WD__ygdqBvs-Gyt_gI4mSP4_9G9JlJympLHVn--OngUznt51Nnsa73vs3QrYJ3GrLfg5g_hS198K-n8Ig63yHpAJ5NOlJo5ijljkOktERpE1bQjwyPDPQUIeYrH55f9Dq9XIr1J8v78eDmTvM6Wt8Z8Zvg16nmeN_leIQ4"
+                    alt="Aromaterapie"
+                  />
+                  <span>60/90 MIN</span>
+                </div>
+                <div className="service-body">
+                  <div className="service-icon">
+                    <Wind size={18} />
+                  </div>
+                  <h3>Aromaterapie</h3>
+                  <p>
+                    Călătorie senzorială bazată pe uleiuri esențiale pure, alese pentru a susține
+                    starea ta de calm și echilibru.
+                  </p>
+                  <div className="service-footer">
+                    <strong>de la 240 RON</strong>
+                    <button type="button">Rezervă</button>
+                  </div>
+                </div>
+              </motion.article>
+
+              <motion.article {...fadeInProps} className="service-card">
+                <div className="service-media">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMJfRVXYmHwcijEu-BkmynSyGroseA-hSe60F_R1PGg4SlmK5B8cqiADdzKxSuKSQy1lZoE1FokIdEYA3krPO-Zg9BtGRAcALRYvP2p93AWOtElYTH2GeFPWya0zfxnTQK-S4rC3tu1DHulBCI4moEFGOieKAaOQJ5uFqgeg4DXSxT6Q-zgC8zAt3gnPpJ-xjNV-CI6YKzf4ekHiRmtxfJm1ZwRAYrun4e748-k4dRlDC73DomOtDvoZLhmVOKf8VuOmMvuNDyUGg"
+                    alt="Reflexoterapie"
+                  />
+                  <span>60 MIN</span>
+                </div>
+                <div className="service-body">
+                  <div className="service-icon">
+                    <Leaf size={18} />
+                  </div>
+                  <h3>Reflexoterapie</h3>
+                  <p>
+                    Metodă ancestrală ce activează punctele reflexe ale tălpilor pentru echilibru
+                    funcțional și regenerare profundă.
+                  </p>
+                  <div className="service-footer">
+                    <strong>200 RON</strong>
+                    <button type="button">Rezervă</button>
+                  </div>
+                </div>
+              </motion.article>
+            </div>
+          </div>
+        </section>
+
+        <section className="services-experience py-32" id="about">
+          <div className={`${containerClass} experience-grid`}>
+            <motion.div {...fadeInProps} className="experience-media">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvYplHawWSWUBO98WtXD2n9gAtRE2k4wrqQSUgCQNJ7ig6xEZ5_UzB-bxOyvacyPA0naH30X1XTVyI8xSSXeLNwCLJWWuceOZsMPn9XjoCVo77lb3-KeJH8mi6-OGFSpCQVH34AoAjTPcG4EUyu9IlZBcZawozhqUhxEoJ94fEhTVuR5gY4nNiyA81RAk5hAGxclzrAOPfMQqM8te6HsCo37_DB-RESkD4bbaAt0YADiuxwwaSa0TKvBOP560CT4VN1LE8AShUZcA"
+                alt="Ingrediente naturale spa"
+              />
+            </motion.div>
+
+            <motion.div {...fadeInProps} className="experience-content">
+              <span>Filozofia Noastră</span>
+              <h2>The Serene Experience</h2>
+              <div className="experience-points">
+                <div>
+                  <Droplets size={18} />
+                  <div>
+                    <h4>Ingrediente 100% Organice</h4>
+                    <p>Uleiuri presate la rece și extracte botanice certificate.</p>
+                  </div>
+                </div>
+                <div>
+                  <Flower2 size={18} />
+                  <div>
+                    <h4>Esențe Personalizate</h4>
+                    <p>Arome alese individual pentru starea ta de bine.</p>
+                  </div>
+                </div>
+                <div>
+                  <Check size={18} />
+                  <div>
+                    <h4>Puritate și Calmitate</h4>
+                    <p>Ritualuri curate pentru echilibru fizic și mental.</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="services-footer">
+        <div className={`${containerClass} footer-grid`}>
+          <div>
+            <div className="footer-logo">Serene Haven</div>
+            <p>© 2024 Serene Haven Sanctuary. All rights reserved.</p>
+          </div>
+          <div className="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sustainability</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}

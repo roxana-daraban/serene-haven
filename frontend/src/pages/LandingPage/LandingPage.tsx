@@ -1,142 +1,199 @@
-import { motion, HTMLMotionProps } from 'framer-motion';
-import { Flower2, Leaf, Wind, CheckCircle2, MapPin, Clock, Phone } from 'lucide-react';
-import './LandingPage.css';
+import { motion, type Variants } from 'framer-motion'
+import { Check, Clock, Flower2, Leaf, MapPin, Phone, Wind } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import './LandingPage.css'
 
-const fadeInProps: HTMLMotionProps<"div"> = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] }
-};
+const easeSoft = [0.22, 1, 0.36, 1] as const
+const iconSubtle = 'opacity-60 text-[#6a5f00]'
+const bodyMuted = 'font-body text-[15px] leading-relaxed text-[#4b4738]/85'
+
+const fadeIn: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.85, ease: easeSoft },
+  },
+}
+
+// Folosim un link alternativ foarte stabil pentru testare
+const HERO_IMG_SRC = 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2000&auto=format&fit=crop'
 
 export const LandingPage = () => {
   return (
     <div className="landing-page-wrapper">
-      {/* Navigation */}
-      <nav className="nav-fixed">
-        <div className="nav-container">
-          <a className="nav-logo" href="#">Serene Haven</a>
-          <div className="nav-menu">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <button className="nav-btn">Book Now</button>
+      <section id="home" className="landing-hero-overlay">
+        <div className="hero-bg-wrapper" aria-hidden>
+          <img
+            src={HERO_IMG_SRC}
+            alt="Interior Spa Lux"
+            className="hero-bg-img"
+            decoding="async"
+            fetchPriority="high"
+          />
         </div>
-      </nav>
+        <div className="hero-bg-overlay" aria-hidden />
 
-      <main>
-        {/* HERO SECTION - Height Increased to 750px */}
-        <section id="home" className="hero-editorial">
-          <div className="hero-image-container shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop" 
-              className="hero-main-img"
-              alt="Luxury Spa Interior"
+        <div className="zen-container landing-hero-inner">
+          <motion.div
+            className="landing-hero-content"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+          >
+            <span className="landing-eyebrow">Bun venit la Sanctuarul tău</span>
+            <h1 className="landing-hero-title">
+              Redescoperă <span className="italic font-normal text-[#6a5f00]">Echilibrul</span>
+              <br />
+              Tău Interior
+            </h1>
+            <p className="landing-hero-text">
+              Masaje terapeutice și de relaxare premium, concepute pentru starea ta de bine. O
+              experiență multisenzorială într-un cadru definit de liniște.
+            </p>
+            <div className="mt-12">
+              <Link to="/services" className="landing-cta-main">
+                Explorează Serviciile
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="services" className="bg-[#f4f4ef]/40 py-40">
+        <div className="zen-container">
+          <div className="mb-24 text-center">
+            <h2 className="font-headline text-3xl font-light text-[#1a1c19] md:text-4xl uppercase tracking-widest">
+              Arta Rejuvenării
+            </h2>
+          </div>
+
+          <div className="landing-grid-3">
+            {[
+              {
+                title: 'Masaj Suedez',
+                icon: <Flower2 size={24} />,
+                text: 'Tehnică clasică pentru relaxare musculară, circulație și calm absolut.',
+              },
+              {
+                title: 'Deep Tissue',
+                icon: <Leaf size={24} />,
+                text: 'Lucru profund pe fascia și tensiunea cronică, cu presiune controlată.',
+              },
+              {
+                title: 'Aromaterapie',
+                icon: <Wind size={24} />,
+                text: 'Ritual senzorial cu esențe pure, alese pentru starea ta din prezent.',
+              },
+            ].map((s) => (
+              <motion.article
+                key={s.title}
+                whileInView="visible"
+                initial="hidden"
+                viewport={{ once: true }}
+                variants={fadeIn}
+                whileHover={{ scale: 1.02, translateY: -8 }}
+                className="landing-service-card"
+              >
+                <div className="landing-service-icon">{s.icon}</div>
+                <h3 className="font-headline text-2xl font-light mb-4">{s.title}</h3>
+                <p className={`${bodyMuted} mb-8`}>{s.text}</p>
+                <Link to="/services" className="btn-tarif-refined">
+                  Vezi Tarife
+                </Link>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="py-40 bg-white">
+        <div className="zen-container landing-about-flex">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: easeSoft }}
+            className="about-image-wrap"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&auto=format&fit=crop"
+              alt="Detaliu spa"
+              width={800}
+              height={1000}
             />
-            <div className="hero-overlay"></div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: -40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
-              className="hero-content-box"
-            >
-              <span className="hero-tag">Bun venit la sanctuarul tău</span>
-              <h1 className="hero-title">
-                Redescoperă <br/>
-                <span className="hero-italic">Echilibrul</span> <br/>
-                Tău Interior
-              </h1>
-              <p className="hero-p">
-                Masaje terapeutice premium concepute pentru starea ta de bine. O experiență multisenzorială într-un cadru definit de liniște.
-              </p>
-              <div className="hero-btns">
-                <button className="btn-gold-hero">Explorează Serviciile</button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SERVICES SECTION */}
-        <section id="services" className="services-section">
-          <div className="zen-container">
-            <div className="section-intro">
-              <h2 className="section-title">Arta Rejuvenării</h2>
-              <div className="section-divider" />
-              <p className="section-desc">Fiecare atingere este o călătorie spre relaxare profundă.</p>
-            </div>
-
-            <div className="services-grid-refined">
-              {[
-                { title: 'Masaj Suedez', icon: <Flower2 size={24}/>, color: 'bg-[#e2e8d8]' },
-                { title: 'Deep Tissue', icon: <Leaf size={24}/>, color: 'bg-[#c5b96d]' },
-                { title: 'Aromaterapie', icon: <Wind size={24}/>, color: 'bg-[#d8e2d8]' }
-              ].map((service, i) => (
-                <motion.div 
-                  key={i} 
-                  {...fadeInProps} 
-                  whileHover={{ scale: 1.05, translateY: -10 }}
-                  className="service-card-modern"
-                >
-                  <div className={`icon-bubble ${service.color}`}>
-                    {service.icon}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: easeSoft }}
+            className="space-y-8"
+          >
+            <span className="text-[#526442] font-bold text-[11px] uppercase tracking-[0.3em]">
+              Filozofia Noastră
+            </span>
+            <h2 className="font-headline text-4xl md:text-5xl leading-tight text-[#1a1c19]">
+              Esență Pură din <br />
+              <span className="italic font-normal text-[#6a5f00]">Sânul Naturii</span>
+            </h2>
+            <div className="space-y-4 pt-6">
+              {['Uleiuri organice certificate', 'Mediu controlat acustic', 'Terapii personalizate 1:1'].map(
+                (text) => (
+                  <div key={text} className="flex items-center gap-4">
+                    <Check className={`h-4 w-4 shrink-0 ${iconSubtle}`} />
+                    <span className="text-sm tracking-wide text-[#4b4738]">{text}</span>
                   </div>
-                  <h3>{service.title}</h3>
-                  <p>Tehnici rafinate pentru relaxare musculară generală și regenerare spirituală.</p>
-                  <button className="btn-tarif-refined">Vezi Tarife</button>
-                </motion.div>
-              ))}
+                ),
+              )}
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* ABOUT SECTION */}
-        <section id="about" className="about-section">
-          <div className="zen-container about-flex">
-            <div className="about-img-wrap">
-              <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1000" alt="About stones" />
+      <section id="contact" className="py-40 bg-[#f4f4ef]">
+        <div className="zen-container text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="font-headline text-4xl mb-6 text-[#1a1c19]">Pregătit pentru relaxare?</h2>
+            <p className="text-[#4b4738]/70 mb-4">Programează-ți momentul de răsfăț astăzi.</p>
+
+            <div className="landing-contact-strip">
+              <div className="c-info">
+                <MapPin className={iconSubtle} size={20} />
+                <p>Adresă</p>
+                <span>București, Nr. 24</span>
+              </div>
+              <div className="c-info">
+                <Clock className={iconSubtle} size={20} />
+                <p>Program</p>
+                <span>10:00 - 21:00</span>
+              </div>
+              <div className="c-info">
+                <Phone className={iconSubtle} size={20} />
+                <p>Telefon</p>
+                <span>+40 722 000 111</span>
+              </div>
             </div>
-            <motion.div {...fadeInProps} className="about-text">
-              <span className="tag-line">Filozofia Noastră</span>
-              <h2>Esență Pură din <br/><i>Sânul Naturii</i></h2>
-              <p>Credem în regenerarea adevărată prin ingrediente 100% naturale și terapii personalizate.</p>
-              <div className="feature-list">
-                {['Uleiuri organice certificate', 'Mediu controlat acustic', 'Terapii personalizate 1:1'].map(f => (
-                  <div key={f} className="f-item">
-                    <CheckCircle2 size={16} className="text-[#6a5f00]" />
-                    <span>{f}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
 
-        {/* CONTACT SECTION */}
-        <section id="contact" className="contact-section">
-          <div className="zen-container">
-            <motion.div {...fadeInProps} className="cta-box-classic shadow-xl">
-              <h2 className="section-title">Pregătit pentru relaxare?</h2>
-              <p className="cta-subtitle">Programează-ți momentul de răsfăț astăzi.</p>
-              
-              <div className="contact-info-strip">
-                <div className="c-info"><MapPin size={20}/><span>București, Nr. 24</span></div>
-                <div className="c-info"><Clock size={20}/><span>Luni-Dum: 10-21</span></div>
-                <div className="c-info"><Phone size={20}/><span>+40 722 000 111</span></div>
-              </div>
-              
-              <button className="btn-gold-large">Rezervă o Ședință</button>
-            </motion.div>
-          </div>
-        </section>
-      </main>
+            <button type="button" className="landing-cta-gold">
+              Rezervă o Ședință
+            </button>
+          </motion.div>
+        </div>
+      </section>
 
-      <footer className="footer-luxe">
-        <span className="f-logo">Serene Haven</span>
-        <p>© 2026 Crafted for Rejuvenation.</p>
+      <footer className="landing-footer-simple border-0">
+        <span className="font-serif italic text-2xl text-[#6a5f00]">Serene Haven</span>
+        <p className="text-[10px] text-[#4b4738]/40 tracking-[0.3em] uppercase mt-6">
+          © {new Date().getFullYear()} Crafted for Rejuvenation.
+        </p>
       </footer>
     </div>
-  );
-};
+  )
+}
